@@ -32,21 +32,33 @@ const Cart = () => {
   }
 
   return (
-    <Layout>
-      <div className='flex gap-10'>
-        <div className="">
-          {cart?.map((item) => (
-            // tp6 -----increment={increment
-            // tpd2-----decrement={decrement}
-            <CartItem key={item?.id} item={item} increment={increment}
-              decrement={decrement} />
-          ))}
-        </div>
-        <div className="">
-          {/* tp3---${total} */}
-          <h1 className="text-2xl">Total Price-${total}</h1>
-        </div></div>
-    </Layout>
+
+
+
+<Layout>
+
+    <div className='w-[1024px] mx-auto flex items-start flex-col mt-10'>
+     
+      {cart?.map((item) => (
+        // tp6 -----increment={increment
+        // tpd2-----decrement={decrement}
+        <CartItem key={item?.id} item={item} increment={increment}
+          decrement={decrement} />
+      ))}
+
+      <hr className="border-1 
+           border-black w-full" />
+
+      <div className='flex justify-between w-full'>
+
+        <h2>Total</h2>
+
+        <p>${total.toFixed(2)}</p>
+
+      </div>
+    </div>
+
+</Layout>
   )
 
 }
@@ -172,7 +184,7 @@ export default Cart
 
 // toal price for decrement
 // tpd1
- // tpd1 write cart.jsx
+// tpd1 write cart.jsx
 //  const decrement=(id)=>{
 //   setCart(
 //     cart?.map((item)=>{
@@ -190,13 +202,13 @@ export default Cart
 // tpd3---decrement write cartitem.jsx
 // const CartItem = ({item ,increment ,decrement}) => {
 
- {/* tpd4---onClick={()=>decrement(item.id)} */}
+{/* tpd4---onClick={()=>decrement(item.id)} */ }
 //  <button onClick={()=>decrement(item.id)} className="btn btn-error">-</button>
 
 // Cart quantity show at menubar1 write at layout
 // const cartItems = JSON.parse(localStorage.getItem("cartItems"));
 
- {/*Cart quantity show at menubar1---- {cartItems?.length} */}
+{/*Cart quantity show at menubar1---- {cartItems?.length} */ }
 //  <NavLink to={"/cart"}>
 //  <button className="py-1 my-1 bg-base-300 w-full rounded">
 //      Cart - {cartItems?.length}

@@ -9,10 +9,11 @@ import Cart from "./Pages/Cart";
 // 1
 import Register from "./Pages/Register";
 // import Login from "./Pages/Login";
-import Login1 from "./Pages/Login1";
+// import Login1 from "./Pages/Login1";
 import Products from "./Pages/Products";
 import Edit from "./Pages/Edit";
 import Details from "./Pages/Details";
+import Login from "./Pages/Login";
 const App = () => {
   return (
     <>
@@ -70,9 +71,9 @@ const App = () => {
             </Guard>
           }
         />
-        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/login1" element={<Login1 />} />
+        {/* <Route path="/login1" element={<Login1 />} /> */}
       </Routes>
     </>
   );

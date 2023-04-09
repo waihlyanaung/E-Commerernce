@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import { useStateContext } from '../Context/StateContext'
 const Products = () => {
   // search4
-  const{search}=useStateContext();
+  // const{search}=useStateContext();
   const [products, setProducts,] = useState([]);
 // cm3
   const cartItems = JSON.parse(localStorage.getItem("cartItems"));
@@ -64,27 +64,20 @@ const Products = () => {
     fetchProducts();
    
 
-  }, [products,search]);
+  }, [products,]);
   return (
     <Layout>
      <div className="flex flex-wrap gap-5 justify-center items-center mb-10">
-        {/*deletefunction=3====
-            deleteProduct={deleteProduct}  */}
-            {/* search5 */}
-     {products ?.filter((pd) => {
-      if (search === "") {
-        return pd;
-      } else if (
-        pd.title.toLowerCase().includes(search.toLocaleLowerCase())
-      ) {
-        return pd;
-      }
-    })?.map(product => <Card key={product?.id} product={product} 
+    
+    {products?.map((product) => 
+    <Card key={product?.id} product={product} 
             deleteProduct={deleteProduct}
             // ac3 ----addToCart={addToCart}
             // rc3---- removeFromCart={removeFromCart}
             addToCart={addToCart}
-            removeFromCart={removeFromCart} />)}
+            removeFromCart={removeFromCart} />
+            
+    )}
       </div>
     </Layout>
   );

@@ -5,18 +5,18 @@ import  { useState,useEffect } from "react";
 import { useSelector } from 'react-redux';
 
 // create file navbar
-//navbar1=[copy from daisy ui and paste return of navbar] and go to layout
+// navbar1=[copy from daisy ui and paste return of navbar] and go to layout
 // navbar3=[const userData = JSON.parse(localStorage.getItem("userData"));]
 // navbar4=delete img src url and paste =[userData?.image] and go to layout
 const Navbar = () => {
     // 12log
-    const user =useSelector(state.auth.user)
+    // const user =useSelector(state.auth.user)
 
     const userData = JSON.parse(localStorage.getItem("userData"));
     //search2
-    const{search,setSearch}=useStateContext();
+    // const{search,setSearch}=useStateContext();
     
-    console.log(search);
+    // console.log(search);
     return (
         <div><div className="navbar bg-base-100">
             <div className="flex-1">
@@ -29,7 +29,7 @@ const Navbar = () => {
             <div className="flex-none gap-2">
                 <div className="form-control">
                     {/* search3-- value={search} onChange={e=>setSearch(e.target.value)}*/}
-                    <input value={search} onChange={e=>setSearch(e.target.value)} type="text" placeholder="Search" className="input input-bordered" />
+                    {/* <input value={search} onChange={e=>setSearch(e.target.value)} type="text" placeholder="Search" className="input input-bordered" /> */}
                 </div>
 {/* 
                 <div className="dropdown dropdown-end">
